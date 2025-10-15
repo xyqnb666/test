@@ -1,0 +1,206 @@
+import nimib
+
+nbInit
+
+nbText: """
+# RPN计算器使用手册
+
+<div style="text-align: center; color: #666; margin-bottom: 2rem;">
+  基于C++实现的逆波兰表示法计算器
+</div>
+"""
+
+nbText: "## 🚀 编译和运行"
+
+nbText: "### 一键编译并运行"
+nbText: "```bash"
+nbText: "g++ F_rpn.cpp -o F_rpn && ./F_rpn"
+nbText: "```"
+
+nbText: "## 📚 基础使用示例"
+
+nbText: "### 简单四则运算"
+nbText: "```"
+nbText: "&gt; 5 3 +"
+nbText: "结果: 8"
+nbText: "栈: 8"
+nbText: "```"
+
+nbText: "### 复杂表达式计算"
+nbText: "```"
+nbText: "&gt; 2 3 + 4 *"
+nbText: "结果: 20"
+nbText: "栈: 20"
+nbText: "```"
+
+nbText: "### 连续运算"
+nbText: "```"
+nbText: "&gt; 5"
+nbText: "已压入: 5"
+nbText: "栈: 5"
+nbText: "&gt; 3" 
+nbText: "已压入: 3"
+nbText: "栈: 5 3"
+nbText: "&gt; +"
+nbText: "操作完成"
+nbText: "栈: 8"
+nbText: "```"
+
+nbText: "## 🔢 数学函数示例"
+
+nbText: "### 幂运算和平方根"
+nbText: "```"
+nbText: "&gt; 2 3 ^"
+nbText: "结果: 8"
+nbText: "栈: 8"
+nbText: "&gt; 16 sqrt"
+nbText: "结果: 4" 
+nbText: "栈: 4"
+nbText: "```"
+
+nbText: "### 三角函数（角度制）"
+nbText: "```"
+nbText: "&gt; 90 sin"
+nbText: "结果: 1"
+nbText: "栈: 1"
+nbText: "&gt; 0 cos"
+nbText: "结果: 1"
+nbText: "栈: 1"
+nbText: "&gt; 45 tan"
+nbText: "结果: 1"
+nbText: "栈: 1"
+nbText: "```"
+
+nbText: "### 斐波那契数列"
+nbText: "```"
+nbText: "&gt; 5 fib"
+nbText: "结果: 5"
+nbText: "栈: 5"
+nbText: "&gt; 6 fib"
+nbText: "结果: 8"
+nbText: "栈: 8"
+nbText: "```"
+
+nbText: "## 🛠️ 栈操作命令"
+
+nbText: "### 清空栈"
+nbText: "```"
+nbText: "&gt; clear"
+nbText: "栈已清空"
+nbText: "```"
+
+nbText: "### 显示栈内容"
+nbText: "```"
+nbText: "&gt; show"
+nbText: "栈内容 (从顶到底): 5 3 2"
+nbText: "```"
+
+nbText: "### 复制栈顶元素"
+nbText: "```"
+nbText: "&gt; 5 dup"
+nbText: "栈: 5 5"
+nbText: "```"
+
+nbText: "### 交换栈顶元素"
+nbText: "```"
+nbText: "&gt; 5 3 swap"
+nbText: "栈: 3 5"
+nbText: "```"
+
+nbText: "### 弹出栈顶元素"
+nbText: "```"
+nbText: "&gt; 5 3 pop"
+nbText: "栈: 5"
+nbText: "```"
+
+nbText: "## 📊 高级功能"
+
+nbText: "### 查看历史记录"
+nbText: "```"
+nbText: "&gt; history"
+nbText: "计算历史:"
+nbText: "1: 5 3 + = 8"
+nbText: "2: 2 3 * = 6"
+nbText: "```"
+
+nbText: "### 批量计算模式"
+nbText: "```"
+nbText: "&gt; batch"
+nbText: "进入批量计算模式，输入多个表达式(空行结束):"
+nbText: "expr&gt; 5 3 +"
+nbText: "expr&gt; 2 4 *"
+nbText: "expr&gt; "
+nbText: "开始批量计算 2 个表达式..."
+nbText: "表达式 1: 5 3 +"
+nbText: "结果: 8"
+nbText: "表达式 2: 2 4 *"
+nbText: "结果: 8"
+nbText: "```"
+
+nbText: "## ❓ 帮助信息"
+
+nbText: "### 查看所有命令"
+nbText: "```"
+nbText: "&gt; help"
+nbText: "=== RPN计算器使用说明 ==="
+nbText: "基本用法: 输入数字和操作符，用空格分隔"
+nbText: "示例: 5 2 + 3 *  => (5+2)*3 = 21"
+nbText: "基本操作符:"
+nbText: "  +, -, *, /  : 四则运算"
+nbText: "  sqrt        : 平方根"
+nbText: "  pow         : 幂运算"
+nbText: "  sin, cos, tan: 三角函数(角度制)"
+nbText: "  fib         : 斐波那契数列"
+nbText: "栈操作命令:"
+nbText: "  show        : 显示栈内容"
+nbText: "  clear       : 清空栈"
+nbText: "  pop         : 弹出栈顶元素"
+nbText: "  dup         : 复制栈顶元素"
+nbText: "  swap        : 交换栈顶两个元素"
+nbText: "  history     : 显示计算历史"
+nbText: "  batch       : 进入批量计算模式"
+nbText: "  help        : 显示此帮助"
+nbText: "  quit        : 退出程序"
+nbText: "========================"
+nbText: "```"
+
+nbText: "## 🎯 退出程序"
+
+nbText: "### 正常退出"
+nbText: "```"
+nbText: "&gt; quit"
+nbText: "感谢使用RPN计算器！"
+nbText: "```"
+
+nbText: "## 📝 错误处理示例"
+
+nbText: "### 除零错误"
+nbText: "```"
+nbText: "&gt; 5 0 /"
+nbText: "错误: 除零错误"
+nbText: "```"
+
+nbText: "### 操作数不足"
+nbText: "```"
+nbText: "&gt; 5 +"
+nbText: "错误: 需要至少 2 个操作数"
+nbText: "```"
+
+nbText: "### 负数平方根"
+nbText: "```"
+nbText: "&gt; -4 sqrt"
+nbText: "错误: 负数不能开平方根"
+nbText: "```"
+
+nbText: "### 未知操作符"
+nbText: "```"
+nbText: "&gt; 5 3 &"
+nbText: "错误: 未知的操作符或命令 '&'"
+nbText: "```"
+
+nbText: "---"
+nbText: "<div style='text-align: center; color: #999; margin-top: 2rem;'>"
+nbText: "RPN计算器文档 - 基于C++实现"
+nbText: "</div>"
+
+nbSave
